@@ -32,7 +32,7 @@ class _SplashView extends State<SplashView> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        color: AppColors.primaryColor,
+        color: Colors.black87,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -50,7 +50,7 @@ class _SplashView extends State<SplashView> {
               height: 16,
             ),
             const Text(
-              "Bienvenido!",
+              "Welcome!",
               style: TextStyle(
                   fontSize: 32,
                   color: Colors.white,
