@@ -2,7 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:example_app/constants/colors.dart';
 import 'package:example_app/ui/views/home/explore_view.dart';
 import 'package:example_app/ui/views/home/for_you_view.dart';
-import 'package:example_app/ui/views/home/settings.dart';
+import 'package:example_app/ui/views/home/settings_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -38,12 +38,13 @@ class _HomeView extends State<HomeView> {
   CurvedNavigationBar _bottomBar() {
     return CurvedNavigationBar(
       index: _currentPage,
-      backgroundColor: Colors.transparent,
+      color: AppColors.primaryColor,
+      backgroundColor: AppColors.background,
       animationDuration: const Duration(milliseconds: 300),
       items: const <Widget>[
-        Icon(Icons.auto_awesome_mosaic_rounded, size: 30),
-        Icon(Icons.home, size: 30),
-        Icon(Icons.settings, size: 30),
+        Icon(Icons.auto_awesome_mosaic_rounded, size: 30, color: AppColors.text_dark,),
+        Icon(Icons.home, size: 30, color: AppColors.text_dark,),
+        Icon(Icons.settings, size: 30, color: AppColors.text_dark,),
       ],
       onTap: (int index) {
         setState(() {

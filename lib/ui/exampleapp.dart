@@ -18,6 +18,7 @@ class _ExampleApp extends State<ExampleApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: AppColors.mainColor,
           visualDensity: VisualDensity.adaptivePlatformDensity,

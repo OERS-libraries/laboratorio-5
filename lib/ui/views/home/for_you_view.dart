@@ -24,6 +24,7 @@ class _ForYouView extends State<ForYouView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: AppColors.background,
         elevation: 0,
         actions: [
@@ -142,7 +143,7 @@ class _ForYouView extends State<ForYouView> {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Padding(
-                        padding: EdgeInsets.only(bottom: 30),
+                        padding: EdgeInsets.only(bottom: 30,left: 30,right: 30),
                         child: Hero(
                             tag: "${promos[index].id}",child: Image.asset(promos[index].image))),
                   ),
@@ -168,10 +169,9 @@ class _ForYouView extends State<ForYouView> {
     return List.generate(
         promos.length,
         (index) => Stack(
-              alignment: Alignment.centerRight,
+              alignment: Alignment.bottomRight,
               children: [
                 Container(
-                  alignment: Alignment.centerLeft,
                   margin: EdgeInsets.only(left: 20),
                   height: 180,
                   width: 260,
@@ -180,8 +180,8 @@ class _ForYouView extends State<ForYouView> {
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Padding(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Image.asset(promos[index].image)),
+                      padding: EdgeInsets.only(bottom: 50,top: 10),
+                      child: Image.asset(promos[index].image,)),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(15),
@@ -215,7 +215,7 @@ class _ForYouView extends State<ForYouView> {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Padding(
-        padding: EdgeInsets.only(left: 20),
+        padding: EdgeInsets.only(right: 20),
         child: Row(
           children: _itemListShirts(),
         ),

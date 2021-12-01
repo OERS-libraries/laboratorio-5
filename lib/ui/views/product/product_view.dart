@@ -1,4 +1,5 @@
 import 'package:example_app/constants/colors.dart';
+import 'package:example_app/models/cart.dart';
 import 'package:example_app/models/product.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,8 @@ class ProductView extends StatelessWidget {
               Icons.shopping_cart,
               color: AppColors.text_light,
             ),
-            onPressed: () {},
+            onPressed: () => Navigator.of(context)
+                .pushNamed("/cart-view"),
           ),
         ],
       ),
@@ -45,9 +47,12 @@ class ProductView extends StatelessWidget {
                     Expanded(
                         child:
                             Stack(alignment: Alignment.bottomRight, children: [
-                      Hero(
-                          tag: "${product.id}",
-                          child: Image.asset(product.image)),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 80.0),
+                        child: Hero(
+                            tag: "${product.id}",
+                            child: Image.asset(product.image)),
+                      ),
                       Padding(
                         padding: const EdgeInsets.all(15),
                         child: Column(
@@ -95,7 +100,9 @@ class ProductView extends StatelessWidget {
                   ),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(1000),
-                    onTap: () => {},
+                    onTap: () => {
+                      demoCarts.addItem(product)
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(15),
                       child: Icon(Icons.shopping_cart),

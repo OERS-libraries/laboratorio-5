@@ -7,4 +7,6 @@ class Product{
 
   Product(this.image, this.title, this.description, this.price, this.size,
       this.id, this.color);
+
+
 }

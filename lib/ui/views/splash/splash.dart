@@ -16,7 +16,7 @@ class _SplashView extends State<SplashView> {
   void initState() {
     super.initState();
     _delaySplash = Timer(const Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacementNamed("/home");
+      Navigator.of(context).pushReplacementNamed("/login");
     });
   }
 
@@ -32,7 +32,7 @@ class _SplashView extends State<SplashView> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        color: Colors.black87,
+        color: AppColors.primaryColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -40,11 +40,7 @@ class _SplashView extends State<SplashView> {
             Container(
               width: Util.sizeScreen(context: context).width * 0.40,
               height: Util.sizeScreen(context: context).width * 0.40,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/images/logo2.png"),
-                    fit: BoxFit.fill),
-              ),
+              child: Icon(Icons.shopping_cart, color: AppColors.text_dark,size: 150,),
             ),
             const SizedBox(
               height: 16,
@@ -53,7 +49,7 @@ class _SplashView extends State<SplashView> {
               "Welcome!",
               style: TextStyle(
                   fontSize: 32,
-                  color: Colors.white,
+                  color: AppColors.text_dark,
                   fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),

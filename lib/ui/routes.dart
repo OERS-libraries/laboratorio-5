@@ -1,6 +1,8 @@
 import 'package:example_app/models/product.dart';
+import 'package:example_app/ui/views/Register/register_view.dart';
 import 'package:example_app/ui/views/cart/cart_view.dart';
 import 'package:example_app/ui/views/home/home_view.dart';
+import 'package:example_app/ui/views/login/login_view.dart';
 import 'package:example_app/ui/views/product/product_view.dart';
 import 'package:example_app/ui/views/splash/splash.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,10 @@ class Routes {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => SplashView());
+      case '/login':
+        return MaterialPageRoute(builder: (_) => LoginView());
+      case '/register':
+        return MaterialPageRoute(builder: (_) => Registerview());
       case '/home':
         return MaterialPageRoute(builder: (_) => HomeView());
       case '/product-view':
